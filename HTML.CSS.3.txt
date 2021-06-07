@@ -1,0 +1,188 @@
+##html##
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Photography</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">Home Page</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">My Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <section class="top-container">
+            <header class="showcase">
+                <h1>Your Web Presence</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, quos.</p>
+                <a href="#" class="bttn">Read More</a>
+            </header>
+            <div class="top-box top-box-a">
+                <h4># Membership</h4>
+                <p class="Price">$299/month</p>
+                <a href="" class="bttn">Buy Now</a>
+            </div>
+            <div class="top-box top-box-b">
+                <h4># Pro Membership</h4>
+                <p class="Price">$399/month</p>
+                <a href="" class="bttn">Buy Now</a>
+            </div>
+        </section>
+        
+        <section class="info">
+            <img src="img/newimg.jpeg" alt="">
+            
+            <div>
+               
+                <img src="img/pic3.jpeg" alt=""><br>
+                <br>
+                <h2>Your Business On The Web</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur expedita, 
+                   at pariatur,corporis, unde aperiam eligendi in eveniet animi aliquam maiores!
+                   corporis, unde aperiam eligendi in eveniet animi aliquam maiores! Autem ipsam
+                   praesentium atque et repellendus non maxime? Harum.</p>
+                   <a href="#" class="bttn">Learn More</a>
+                  
+            </div>
+          
+        </section>
+       
+        <footer>
+            <p>Gridbiz &copy;2021</p>
+        </footer>
+
+    </div>
+    
+</body>
+</html>
+
+##html##
+
+
+##CSS##
+
+:root{
+    --primary:#ddd;
+    --dark:#333;
+    --light:#fff;
+    --shadow:0 1px 5px rgba(104,104,104,0.8);
+}
+
+
+html{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--dark);
+}
+body{
+    background: #ccc;
+    margin: 30px 50;
+    line-height: 1.2;
+}
+.bttn{
+    background: var(--dark);
+    color: var(--light);
+    padding: 0.3rem 1.1rem;
+    text-decoration: none;
+    border: 0;
+}
+img{
+    max-width: 100%;
+}
+.wrapper{
+    display: grid;
+    grid: gap 20px;
+}
+.main-nav ul {
+    display: grid;
+    grid-gap: 20px;
+    padding: 0;
+    list-style: none;
+    grid-template-columns:repeat(4, 1fr);
+
+}
+.main-nav a{
+    background: var(--primary);
+    display: block;
+    text-decoration: none;
+    padding: 1rem;
+    text-align: center;
+    color: var(--dark);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    box box-shadow: var(--shadow);
+}
+.main-nav a:hover{
+    background: var(--dark);
+    color: var(--light);
+}
+
+.top-container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas: "showcase showcase top-box-a"
+    "showcase showcase top-box-b";
+}
+.showcase {
+    grid-area: showcase;
+    min-height: 400px;
+    background: url(img/PIC3..jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 3rem;
+    box-shadow: var(--shadow);
+}
+.showcase h1{
+    font-size: 4rem;
+    margin-bottom: 0;
+    color: var(--dark);
+}
+.showcase p{
+    font-size: 1.4rem;
+    color: var(--dark);
+    margin-top: 0;
+
+}
+.top-box {
+    background: var(--primary);
+    display: grid;
+    align-items: center;
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+}
+.top-box .price{
+    font-size: 2.5rem;
+} 
+.top-box-a {
+    grid-area: top-box-a;
+    min-height: auto;
+}
+.top-box-b {
+     grid-area: top-box-b ;
+     min-height: auto;
+}
+
+.info{
+    background: var(--primary);
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(2,1fr);
+    padding: 3rem;
+}
+
+footer{
+    margin-top: 2rem;
+    background: var(--dark);
+    color: var(--light);
+    text-align: center;
+    padding: 1rem;
+}
+##CSS##
