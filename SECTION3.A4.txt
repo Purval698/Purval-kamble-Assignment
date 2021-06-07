@@ -1,0 +1,91 @@
+HP@LAPTOP-CLV2S3BG MINGW64 ~/Assignments (master)
+$ git branch js-assignments
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/Assignments (master)
+$ git checkout js-assignments
+Switched to branch 'js-assignments'
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/Assignments (js-assignments)
+$ nano javascript
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/Assignments (js-assignments)
+$ git add javascript
+warning: LF will be replaced by CRLF in Assignments/javascript.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/Assignments (js-assignments)
+$ commit -m "new file added"
+bash: commit: command not found
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/Assignments (js-assignments)
+$ git commit -m "new file added"
+[js-assignments 1bdba47] new file added
+ 1 file changed, 4 insertions(+)
+ create mode 100644 Assignments/javascript
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/Assignments (js-assignments)
+$ nano README.txt
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/Assignments (js-assignments)
+$ git add README.txt
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/Assignments (js-assignments)
+$ git commit -m "File modified"
+[js-assignments fcff6d1] File modified
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/Assignments (js-assignments)
+$ git checkout master
+
+Switched to branch 'master'
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/Assignments (master)
+$
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/Assignments (master)
+$ nano README.txt
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/Assignments (master)
+$ git add README.txt
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/Assignments (master)
+$ git commit -m " 1st line changed"
+[master c938409]  1st line changed
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/Assignments (master)
+$ git checkout js-assignments
+Switched to branch 'js-assignments'
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/Assignments (js-assignments)
+$ nano javascript
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/Assignments (js-assignments)
+$ git add javascript
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/Assignments (js-assignments)
+$ git commit -m " Made small change"
+[js-assignments ba46d88]  Made small change
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/Assignments (js-assignments)
+$ git checkout master
+Switched to branch 'master'
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/Assignments (master)
+$ git merge js-assignments
+Auto-merging Assignments/README.txt
+CONFLICT (content): Merge conflict in Assignments/README.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/Assignments (master|MERGING)
+$ git branch -d js-assignments
+error: The branch 'js-assignments' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D js-assignments'.
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/Assignments (master|MERGING)
+$ git branch -D js-assignments
+Deleted branch js-assignments (was ba46d88).
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/Assignments (master|MERGING)
+$

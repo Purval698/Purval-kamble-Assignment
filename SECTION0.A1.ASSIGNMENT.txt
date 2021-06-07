@@ -1,0 +1,311 @@
+
+1.Create a directory 'project dir' & cd to 'project dir'.
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~ (master|MERGING)
+$ mkdir PROJECT_DIR
+mkdir: cannot create directory ‘PROJECT_DIR’: File exists
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~ (master|MERGING)
+$ cd PROJECT_DIR
+
+3.Create a new file index.html.
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ touch index.html
+
+4. Check the git status. You should find index.htmlas untracked file.
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ignore
+        info.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+5. Stage the index.html file.
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ git add index.html
+
+6. Commit index.html
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ git commit -m "New file added"
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ignore
+        info.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+7. Make few changes in index.html & create a new file info.txt file.
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ nano index.html
+
+8. Check git status. You should find index.html& info.txt as untracked files.
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ignore
+        info.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+9. Configure GIT to ignore all txt files.
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ nano .gitignore
+
+10. Again check the git status. You should find only index.htmlas untracked file.
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        ignore
+        info.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ git -d .gitignore
+unknown option: -d
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        ignore
+        info.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+11. State & commit index.html
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ git add index.html
+warning: LF will be replaced by CRLF in index.html.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ git commit -m "Modified file"
+[master e06d3ee] Modified file
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+12. Log all your comments so far.
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ git log
+commit e06d3eedf7064a7055d0b711b35d90a5014d6e98 (HEAD -> master)
+Author: Purval698 <purvalkamble608@gmail.com>
+Date:   Thu May 20 12:45:41 2021 +0530
+
+    Modified file
+
+commit a179fdf019dfefc1a0ff2dd63d6525fb182b8e4c
+Author: Purval698 <purvalkamble608@gmail.com>
+Date:   Tue May 18 08:44:46 2021 +0530
+
+    Revert "New file modified"
+
+    This reverts commit 1ccd7930e7243b7c5fbfd48f1c6b79df70de3934.
+
+commit 1ccd7930e7243b7c5fbfd48f1c6b79df70de3934
+Author: Purval698 <purvalkamble608@gmail.com>
+Date:   Tue May 18 08:33:17 2021 +0530
+
+    New file modified
+
+commit 070e4e1f346e26daea36e054a10ad0c8fca6027d
+Author: Purval698 <purvalkamble608@gmail.com>
+Date:   Tue May 18 00:48:25 2021 +0530
+
+    added modified file
+
+commit 8a3279ca689f5e1c853c3f49c4bbef33cd1dc130
+Author: Purval698 <purvalkamble608@gmail.com>
+Date:   Tue May 18 00:32:41 2021 +0530
+
+    Added new file
+
+13. Make some changes in index.html.
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ nano index.html
+
+14. Revert the change made in the previous step using git command.
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ git checkout --index.html
+error: unknown option `index.html'
+usage: git checkout [<options>] <branch>
+   or: git checkout [<options>] [<branch>] -- <file>...
+
+    -b <branch>           create and checkout a new branch
+    -B <branch>           create/reset and checkout a branch
+    -l                    create reflog for new branch
+    --guess               second guess 'git checkout <no-such-branch>' (default)
+    --overlay             use overlay mode (default)
+    -q, --quiet           suppress progress reporting
+    --recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --progress            force progress reporting
+    -m, --merge           perform a 3-way merge with the new branch
+    --conflict <style>    conflict style (merge or diff3)
+    -d, --detach          detach HEAD at named commit
+    -t, --track           set upstream info for new branch
+    -f, --force           force checkout (throw away local modifications)
+    --orphan <new-branch>
+                          new unparented branch
+    --overwrite-ignore    update ignored files (default)
+    --ignore-other-worktrees
+                          do not check if another worktree is holding the given ref
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -p, --patch           select hunks interactively
+    --ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ git checkout -- index.html
+
+15. Again change index.html.
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ nano index.html
+
+16. Stage index.html
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ git add index.html
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        ignore
+        info.txt
+
+
+
+17. Revert back the last stage.
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ git restore --staged index.html
+
+
+18. Rename add command to 'my-add.
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ alias my_add="git add"
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ mu_add index.html
+bash: mu_add: command not found
+
+19. Using my add command Stage index.htmlagain & commit the changes.
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ my_add index.html
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ git commit -m "Modified the file again"
+[master d80e13f] Modified the file again
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ git log --oneline
+d80e13f (HEAD -> master) Modified the file again
+e06d3ee Modified file
+a179fdf Revert "New file modified"
+1ccd793 New file modified
+070e4e1 added modified file
+8a3279c Added new file
+
+20. Revert the last commit.
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
+$ git log
+commit d80e13f5b5a254074e7a9bf22f3f901d6eb67fab (HEAD -> master)
+Author: Purval698 <purvalkamble608@gmail.com>
+Date:   Thu May 20 12:56:11 2021 +0530
+
+    Modified the file again
+
+commit e06d3eedf7064a7055d0b711b35d90a5014d6e98
+Author: Purval698 <purvalkamble608@gmail.com>
+Date:   Thu May 20 12:45:41 2021 +0530
+
+    Modified file
+
+commit a179fdf019dfefc1a0ff2dd63d6525fb182b8e4c
+Author: Purval698 <purvalkamble608@gmail.com>
+Date:   Tue May 18 08:44:46 2021 +0530
+
+    Revert "New file modified"
+
+    This reverts commit 1ccd7930e7243b7c5fbfd48f1c6b79df70de3934.
+
+commit 1ccd7930e7243b7c5fbfd48f1c6b79df70de3934
+Author: Purval698 <purvalkamble608@gmail.com>
+Date:   Tue May 18 08:33:17 2021 +0530
+
+    New file modified
+
+commit 070e4e1f346e26daea36e054a10ad0c8fca6027d
+Author: Purval698 <purvalkamble608@gmail.com>
+Date:   Tue May 18 00:48:25 2021 +0530
+
+    added modified file
+
+commit 8a3279ca689f5e1c853c3f49c4bbef33cd1dc130
+Author: Purval698 <purvalkamble608@gmail.com>
+Date:   Tue May 18 00:32:41 2021 +0530
+
+    Added new file
+
+HP@LAPTOP-CLV2S3BG MINGW64 ~/PROJECT_DIR (master)
